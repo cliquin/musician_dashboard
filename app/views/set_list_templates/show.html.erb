@@ -13,17 +13,21 @@
 
       <!-- Edit link set_list start -->
       <div class="col">
-        <a href="/set_lists/<%= @set_list.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit set list
-        </a>
+        <% if current_user == @set_list.user %>
+          <a href="/set_lists/<%= @set_list.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit set_list
+          </a>
+        <% end %>
       </div>
       <!-- Edit link set_list end -->
 
       <!-- Delete link set_list start -->
       <div class="col">
-        <a href="/delete_set_list/<%= @set_list.id %>" class="btn btn-block btn-outline-secondary">
-          Delete set list
-        </a>
+        <% if current_user == @set_list.user %>
+          <a href="/delete_set_list/<%= @set_list.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete set_list
+          </a>
+        <% end %>
       </div>
       <!-- Delete link set_list end -->
     </div>
