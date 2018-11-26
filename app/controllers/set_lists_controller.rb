@@ -43,7 +43,7 @@ class SetListsController < ApplicationController
     @set_list = SetList.find(params.fetch("id_to_modify"))
 
     @set_list.title = params.fetch("title")
-    @set_list.user_id = params.fetch("user_id")
+    
 
     if @set_list.valid?
       @set_list.save
