@@ -1,0 +1,44 @@
+<h1>
+  Edit set list #<%= @set_list.id %>
+</h1>
+
+<hr>
+
+<!-- Form set_list start -->
+<form action="/update_set_list/<%= @set_list.id %>" method="post">
+<!-- Form set_list end -->
+
+  <!-- Label and input for title start -->
+  <div class="form-group">
+    <label for="title">
+      Title
+    </label>
+
+    <!-- Input for title start -->
+    <input type="text" id="title" name="title" class="form-control" value="<%= @set_list.title %>">
+    <!-- Input for title end -->
+  </div>
+  <!-- Label and input for title end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @set_list.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update set list
+  </button>
+</form>
+
+<hr>
+
+<a href="/set_lists">
+  Go back
+</a>

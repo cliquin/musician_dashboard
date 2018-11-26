@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Set list #<%= @set_list.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/set_lists" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link set_list start -->
+      <div class="col">
+        <a href="/set_lists/<%= @set_list.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit set list
+        </a>
+      </div>
+      <!-- Edit link set_list end -->
+
+      <!-- Delete link set_list start -->
+      <div class="col">
+        <a href="/delete_set_list/<%= @set_list.id %>" class="btn btn-block btn-outline-secondary">
+          Delete set list
+        </a>
+      </div>
+      <!-- Delete link set_list end -->
+    </div>
+
+    <dl>
+      <dt>
+        Title
+      </dt>
+      <!-- Display title start -->
+      <dd>
+        <%= @set_list.title %>
+      </dd>
+      <!-- Display title end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @set_list.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@set_list.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@set_list.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

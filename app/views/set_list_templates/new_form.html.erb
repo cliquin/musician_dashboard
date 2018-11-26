@@ -1,0 +1,45 @@
+<h1>
+  Add a new set list
+</h1>
+
+
+<hr>
+
+<!-- Form set_list start -->
+<form action="/create_set_list" method="post">
+<!-- Form set_list end -->
+
+  <!-- Label and input for title start -->
+  <div class="form-group">
+    <label for="title">
+      Title
+    </label>
+
+    <!-- Input for title start -->
+    <input type="text" id="title" name="title" class="form-control">
+    <!-- Input for title end -->
+  </div>
+  <!-- Label and input for title end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create set list
+  </button>
+</form>
+
+<hr>
+
+<a href="/set_lists">
+  Go back
+</a>
