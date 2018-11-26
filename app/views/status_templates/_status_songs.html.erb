@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_song_from_status/<%= song.id %>">
-          Delete
-        </a>
+        <%if current_user == song.user %>
+          <a href="/delete_song_from_status/<%= song.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
