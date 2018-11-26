@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Set list song resource:
+
+  # CREATE
+  get("/set_list_songs/new", { :controller => "set_list_songs", :action => "new_form" })
+  post("/create_set_list_song", { :controller => "set_list_songs", :action => "create_row" })
+
+  # READ
+  get("/set_list_songs", { :controller => "set_list_songs", :action => "index" })
+  get("/set_list_songs/:id_to_display", { :controller => "set_list_songs", :action => "show" })
+
+  # UPDATE
+  get("/set_list_songs/:prefill_with_id/edit", { :controller => "set_list_songs", :action => "edit_form" })
+  post("/update_set_list_song/:id_to_modify", { :controller => "set_list_songs", :action => "update_row" })
+
+  # DELETE
+  get("/delete_set_list_song/:id_to_remove", { :controller => "set_list_songs", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Set list resource:
 
   # CREATE

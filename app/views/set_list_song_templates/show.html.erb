@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Set list song #<%= @set_list_song.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/set_list_songs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link set_list_song start -->
+      <div class="col">
+        <a href="/set_list_songs/<%= @set_list_song.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit set list song
+        </a>
+      </div>
+      <!-- Edit link set_list_song end -->
+
+      <!-- Delete link set_list_song start -->
+      <div class="col">
+        <a href="/delete_set_list_song/<%= @set_list_song.id %>" class="btn btn-block btn-outline-secondary">
+          Delete set list song
+        </a>
+      </div>
+      <!-- Delete link set_list_song end -->
+    </div>
+
+    <dl>
+      <dt>
+        Song
+      </dt>
+      <!-- Display song_id start -->
+      <dd>
+        <%= @set_list_song.song_id %>
+      </dd>
+      <!-- Display song_id end -->
+
+      <dt>
+        Set list
+      </dt>
+      <!-- Display set_list_id start -->
+      <dd>
+        <%= @set_list_song.set_list_id %>
+      </dd>
+      <!-- Display set_list_id end -->
+
+      <dt>
+        Position
+      </dt>
+      <!-- Display position start -->
+      <dd>
+        <%= @set_list_song.position %>
+      </dd>
+      <!-- Display position end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@set_list_song.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@set_list_song.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @set_list_song.present? %>
+  <% if @set_list_song.errors.any? %>
+    <% @set_list_song.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new set list song
+</h1>
+
+
+<hr>
+
+<!-- Form set_list_song start -->
+<form action="/create_set_list_song" method="post">
+<!-- Form set_list_song end -->
+
+  <!-- Label and input for song_id start -->
+  <div class="form-group">
+    <label for="song_id">
+      Song
+    </label>
+
+    <!-- Input for song_id start -->
+    <input type="text" id="song_id" name="song_id" class="form-control" value="<%= @set_list_song.song_id %>">
+    <!-- Input for song_id end -->
+  </div>
+  <!-- Label and input for song_id end -->
+
+  <!-- Label and input for set_list_id start -->
+  <div class="form-group">
+    <label for="set_list_id">
+      Set list
+    </label>
+
+    <!-- Input for set_list_id start -->
+    <input type="text" id="set_list_id" name="set_list_id" class="form-control" value="<%= @set_list_song.set_list_id %>">
+    <!-- Input for set_list_id end -->
+  </div>
+  <!-- Label and input for set_list_id end -->
+
+  <!-- Label and input for position start -->
+  <div class="form-group">
+    <label for="position">
+      Position
+    </label>
+
+    <!-- Input for position start -->
+    <input type="text" id="position" name="position" class="form-control" value="<%= @set_list_song.position %>">
+    <!-- Input for position end -->
+  </div>
+  <!-- Label and input for position end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create set list song
+  </button>
+</form>
+
+<hr>
+
+<a href="/set_list_songs">
+  Go back
+</a>
