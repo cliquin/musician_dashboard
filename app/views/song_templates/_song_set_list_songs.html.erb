@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @song.set_list_songs.each do |set_list_song| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/set_list_songs/<%= set_list_song.id %>">
           <%= set_list_song.song_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_set_list_song_from_song/<%= set_list_song.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="song_set_list_songs_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "song_templates/song_set_list_songs_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

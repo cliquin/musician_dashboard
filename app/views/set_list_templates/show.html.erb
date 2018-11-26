@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link set_list start -->
       <div class="col">
         <% if current_user == @set_list.user %>
           <a href="/set_lists/<%= @set_list.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link set_list end -->
 
-      <!-- Delete link set_list start -->
       <div class="col">
         <% if current_user == @set_list.user %>
           <a href="/delete_set_list/<%= @set_list.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,23 +26,19 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link set_list end -->
     </div>
 
     <dl>
       <dt>
         Title
       </dt>
-      <!-- Display title start -->
       <dd>
         <%= @set_list.title %>
       </dd>
-      <!-- Display title end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @set_list.user.present? %>
           <a href="/users/<%= @set_list.user_id %>">
@@ -53,30 +46,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@set_list.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@set_list.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "set_list_templates/set_list_set_list_songs" %>
@@ -88,4 +75,3 @@
     <%= render partial: "set_list_templates/set_list_songs" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

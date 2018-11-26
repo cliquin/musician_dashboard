@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link status start -->
       <div class="col">
         <a href="/statuses/<%= @status.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit status
         </a>
       </div>
-      <!-- Edit link status end -->
 
-      <!-- Delete link status start -->
       <div class="col">
         <a href="/delete_status/<%= @status.id %>" class="btn btn-block btn-outline-secondary">
           Delete status
         </a>
       </div>
-      <!-- Delete link status end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @status.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @status.user.present? %>
           <a href="/users/<%= @status.user_id %>">
@@ -49,33 +42,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@status.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@status.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "status_templates/status_songs" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

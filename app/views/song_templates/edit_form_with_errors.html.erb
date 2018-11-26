@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @song.errors.any? %>
   <% @song.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,36 +12,24 @@
 
 <hr>
 
-<!-- Form song start -->
 <form action="/update_song/<%= @song.id %>" method="post">
-<!-- Form song end -->
 
-  <!-- Label and input for title start -->
   <div class="form-group">
     <label for="title">
       Title
     </label>
 
-    <!-- Input for title start -->
     <input type="text" id="title" name="title" class="form-control" value="<%= @song.title %>">
-    <!-- Input for title end -->
   </div>
-  <!-- Label and input for title end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for status_id start -->
   <div class="form-group">
     <label for="status_id">
       Status
     </label>
 
-    <!-- Input for status_id start -->
     <%= select_tag(:status_id, options_from_collection_for_select(Status.all, :id, :name, @song.status_id), :class => "form-control") %>
-    <!-- Input for status_id end -->
   </div>
-  <!-- Label and input for status_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update song

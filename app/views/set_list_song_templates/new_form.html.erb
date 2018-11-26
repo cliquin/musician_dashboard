@@ -5,45 +5,31 @@
 
 <hr>
 
-<!-- Form set_list_song start -->
 <form action="/create_set_list_song" method="post">
-<!-- Form set_list_song end -->
 
-  <!-- Label and input for song_id start -->
   <div class="form-group">
     <label for="song_id">
       Song
     </label>
 
-    <!-- Input for song_id start -->
     <%= select_tag(:song_id, options_from_collection_for_select(Song.all, :id, :title, @set_list_song.song_id), :class => "form-control") %>
-    <!-- Input for song_id end -->
   </div>
-  <!-- Label and input for song_id end -->
 
-  <!-- Label and input for set_list_id start -->
   <div class="form-group">
     <label for="set_list_id">
       Set list
     </label>
 
-    <!-- Input for set_list_id start -->
     <%= select_tag(:set_list_id, options_from_collection_for_select(SetList.all, :id, :title, @set_list_song.set_list_id), :class => "form-control") %>
-    <!-- Input for set_list_id end -->
   </div>
-  <!-- Label and input for set_list_id end -->
 
-  <!-- Label and input for position start -->
   <div class="form-group">
     <label for="position">
       Position
     </label>
 
-    <!-- Input for position start -->
     <input type="text" id="position" name="position" class="form-control">
-    <!-- Input for position end -->
   </div>
-  <!-- Label and input for position end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create set list song

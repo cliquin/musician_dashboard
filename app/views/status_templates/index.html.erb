@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "status_templates/statuses_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -54,19 +50,14 @@
 
       <% @statuses.each do |status| %>
       <tr>
-        <!-- Display status.id start -->
         <td>
           <%= status.id %>
         </td>
-        <!-- Display status.id end -->
 
-        <!-- Display status.name start -->
         <td>
           <%= status.name %>
         </td>
-        <!-- Display status.name end -->
 
-        <!-- Display status.user_id start -->
         <td>
           <% if status.user.present? %>
             <a href="/users/<%= status.user.id %>">
@@ -74,19 +65,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display status.user_id end -->
 
-        <!-- Display status.created_at start -->
         <td>
           <%= time_ago_in_words(status.created_at) %> ago
         </td>
-        <!-- Display status.created_at end -->
 
-        <!-- Display status.updated_at start -->
         <td>
           <%= time_ago_in_words(status.updated_at) %> ago
         </td>
-        <!-- Display status.updated_at end -->
 
         <td>
           <a href="/statuses/<%= status.id %>">
