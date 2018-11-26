@@ -6,6 +6,7 @@ class SetListsController < ApplicationController
   end
 
   def show
+    @set_list_song = SetListSong.new
     @set_list = SetList.find(params.fetch("id_to_display"))
 
     render("set_list_templates/show.html.erb")

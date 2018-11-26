@@ -33,6 +33,38 @@ class SetListSongsController < ApplicationController
     end
   end
 
+  def create_row_from_song
+    @set_list_song = SetListSong.new
+
+    @set_list_song.song_id = params.fetch("song_id")
+    @set_list_song.set_list_id = params.fetch("set_list_id")
+    @set_list_song.position = params.fetch("position")
+
+    if @set_list_song.valid?
+      @set_list_song.save
+
+      redirect_to("/songs/#{@set_list_song.song_id}", notice: "SetListSong created successfully.")
+    else
+      render("set_list_song_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_set_list
+    @set_list_song = SetListSong.new
+
+    @set_list_song.song_id = params.fetch("song_id")
+    @set_list_song.set_list_id = params.fetch("set_list_id")
+    @set_list_song.position = params.fetch("position")
+
+    if @set_list_song.valid?
+      @set_list_song.save
+
+      redirect_to("/set_lists/#{@set_list_song.set_list_id}", notice: "SetListSong created successfully.")
+    else
+      render("set_list_song_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @set_list_song = SetListSong.find(params.fetch("prefill_with_id"))
 

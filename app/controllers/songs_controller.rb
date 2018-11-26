@@ -6,6 +6,7 @@ class SongsController < ApplicationController
   end
 
   def show
+    @set_list_song = SetListSong.new
     @song = Song.find(params.fetch("id_to_display"))
 
     render("song_templates/show.html.erb")
@@ -28,6 +29,22 @@ class SongsController < ApplicationController
       @song.save
 
       redirect_back(:fallback_location => "/songs", :notice => "Song created successfully.")
+    else
+      render("song_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_status
+    @song = Song.new
+
+    @song.title = params.fetch("title")
+    @song.user_id = params.fetch("user_id")
+    @song.status_id = params.fetch("status_id")
+
+    if @song.valid?
+      @song.save
+
+      redirect_to("/statuses/#{@song.status_id}", notice: "Song created successfully.")
     else
       render("song_templates/new_form_with_errors.html.erb")
     end

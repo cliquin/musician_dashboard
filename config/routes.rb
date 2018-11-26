@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/set_list_songs/new", { :controller => "set_list_songs", :action => "new_form" })
   post("/create_set_list_song", { :controller => "set_list_songs", :action => "create_row" })
+  post("/create_set_list_song_from_set_list", { :controller => "set_list_songs", :action => "create_row_from_set_list" })
+  post("/create_set_list_song_from_song", { :controller => "set_list_songs", :action => "create_row_from_song" })
 
   # READ
   get("/set_list_songs", { :controller => "set_list_songs", :action => "index" })
@@ -68,6 +70,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/songs/new", { :controller => "songs", :action => "new_form" })
   post("/create_song", { :controller => "songs", :action => "create_row" })
+  post("/create_song_from_status", { :controller => "songs", :action => "create_row_from_status" })
 
   # READ
   get("/songs", { :controller => "songs", :action => "index" })
