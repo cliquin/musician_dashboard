@@ -43,7 +43,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @status.user_id %>
+        <% if @status.user.present? %>
+          <a href="/users/<%= @status.user_id %>">
+            <%= @status.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

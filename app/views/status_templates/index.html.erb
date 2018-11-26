@@ -64,7 +64,11 @@
 
         <!-- Display status.user_id start -->
         <td>
-          <%= status.user.email %>
+          <% if status.user.present? %>
+            <a href="/users/<%= status.user.id %>">
+              <%= status.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display status.user_id end -->
 

@@ -62,13 +62,21 @@
 
         <!-- Display set_list_song.song_id start -->
         <td>
-          <%= set_list_song.song.title %>
+          <% if set_list_song.song.present? %>
+            <a href="/songs/<%= set_list_song.song.id %>">
+              <%= set_list_song.song.title %>
+            </a>
+          <% end %>
         </td>
         <!-- Display set_list_song.song_id end -->
 
         <!-- Display set_list_song.set_list_id start -->
         <td>
-          <%= set_list_song.set_list.title %>
+          <% if set_list_song.set_list.present? %>
+            <a href="/set_lists/<%= set_list_song.set_list.id %>">
+              <%= set_list_song.set_list.title %>
+            </a>
+          <% end %>
         </td>
         <!-- Display set_list_song.set_list_id end -->
 

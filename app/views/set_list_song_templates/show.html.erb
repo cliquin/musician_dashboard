@@ -34,7 +34,11 @@
       </dt>
       <!-- Display song_id start -->
       <dd>
-        <%= @set_list_song.song_id %>
+        <% if @set_list_song.song.present? %>
+          <a href="/songs/<%= @set_list_song.song_id %>">
+            <%= @set_list_song.song.title %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display song_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display set_list_id start -->
       <dd>
-        <%= @set_list_song.set_list_id %>
+        <% if @set_list_song.set_list.present? %>
+          <a href="/set_lists/<%= @set_list_song.set_list_id %>">
+            <%= @set_list_song.set_list.title %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display set_list_id end -->
 

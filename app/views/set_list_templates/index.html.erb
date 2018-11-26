@@ -64,7 +64,11 @@
 
         <!-- Display set_list.user_id start -->
         <td>
-          <%= set_list.user.email %>
+          <% if set_list.user.present? %>
+            <a href="/users/<%= set_list.user.id %>">
+              <%= set_list.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display set_list.user_id end -->
 

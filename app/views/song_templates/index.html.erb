@@ -68,13 +68,21 @@
 
         <!-- Display song.user_id start -->
         <td>
-          <%= song.user.email %>
+          <% if song.user.present? %>
+            <a href="/users/<%= song.user.id %>">
+              <%= song.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display song.user_id end -->
 
         <!-- Display song.status_id start -->
         <td>
-          <%= song.status.name %>
+          <% if song.status.present? %>
+            <a href="/statuses/<%= song.status.id %>">
+              <%= song.status.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display song.status_id end -->
 

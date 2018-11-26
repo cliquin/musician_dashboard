@@ -47,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @set_list.user_id %>
+        <% if @set_list.user.present? %>
+          <a href="/users/<%= @set_list.user_id %>">
+            <%= @set_list.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

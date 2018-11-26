@@ -47,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @song.user_id %>
+        <% if @song.user.present? %>
+          <a href="/users/<%= @song.user_id %>">
+            <%= @song.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -56,7 +60,11 @@
       </dt>
       <!-- Display status_id start -->
       <dd>
-        <%= @song.status_id %>
+        <% if @song.status.present? %>
+          <a href="/statuses/<%= @song.status_id %>">
+            <%= @song.status.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display status_id end -->
 
