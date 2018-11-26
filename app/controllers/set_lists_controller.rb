@@ -10,7 +10,7 @@ class SetListsController < ApplicationController
   end
 
   def index
-    @set_lists = SetList.all
+    @set_lists = current_user.set_lists.page(params[:page]).per(10)
 
     render("set_list_templates/index.html.erb")
   end
