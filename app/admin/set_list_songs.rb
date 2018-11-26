@@ -1,4 +1,6 @@
 ActiveAdmin.register SetListSong do
+
+ permit_params :song_id, :set_list_id, :position
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
