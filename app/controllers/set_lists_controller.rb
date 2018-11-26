@@ -53,6 +53,14 @@ class SetListsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @set_list = SetList.find(params.fetch("id_to_remove"))
+
+    @set_list.destroy
+
+    redirect_to("/users/#{@set_list.user_id}", notice: "SetList deleted successfully.")
+  end
+
   def destroy_row
     @set_list = SetList.find(params.fetch("id_to_remove"))
 

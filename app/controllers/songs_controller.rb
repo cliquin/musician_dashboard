@@ -55,6 +55,22 @@ class SongsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @song = Song.find(params.fetch("id_to_remove"))
+
+    @song.destroy
+
+    redirect_to("/users/#{@song.user_id}", notice: "Song deleted successfully.")
+  end
+
+  def destroy_row_from_status
+    @song = Song.find(params.fetch("id_to_remove"))
+
+    @song.destroy
+
+    redirect_to("/statuses/#{@song.status_id}", notice: "Song deleted successfully.")
+  end
+
   def destroy_row
     @song = Song.find(params.fetch("id_to_remove"))
 

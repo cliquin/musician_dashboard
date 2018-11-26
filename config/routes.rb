@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_status/:id_to_remove", { :controller => "statuses", :action => "destroy_row" })
+  get("/delete_status_from_user/:id_to_remove", { :controller => "statuses", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -37,6 +38,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_set_list_song/:id_to_remove", { :controller => "set_list_songs", :action => "destroy_row" })
+  get("/delete_set_list_song_from_set_list/:id_to_remove", { :controller => "set_list_songs", :action => "destroy_row_from_set_list" })
+  get("/delete_set_list_song_from_song/:id_to_remove", { :controller => "set_list_songs", :action => "destroy_row_from_song" })
 
   #------------------------------
 
@@ -56,6 +59,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_set_list/:id_to_remove", { :controller => "set_lists", :action => "destroy_row" })
+  get("/delete_set_list_from_user/:id_to_remove", { :controller => "set_lists", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -75,6 +79,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_song/:id_to_remove", { :controller => "songs", :action => "destroy_row" })
+  get("/delete_song_from_status/:id_to_remove", { :controller => "songs", :action => "destroy_row_from_status" })
+  get("/delete_song_from_user/:id_to_remove", { :controller => "songs", :action => "destroy_row_from_user" })
 
   #------------------------------
 

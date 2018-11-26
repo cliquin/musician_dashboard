@@ -55,6 +55,22 @@ class SetListSongsController < ApplicationController
     end
   end
 
+  def destroy_row_from_song
+    @set_list_song = SetListSong.find(params.fetch("id_to_remove"))
+
+    @set_list_song.destroy
+
+    redirect_to("/songs/#{@set_list_song.song_id}", notice: "SetListSong deleted successfully.")
+  end
+
+  def destroy_row_from_set_list
+    @set_list_song = SetListSong.find(params.fetch("id_to_remove"))
+
+    @set_list_song.destroy
+
+    redirect_to("/set_lists/#{@set_list_song.set_list_id}", notice: "SetListSong deleted successfully.")
+  end
+
   def destroy_row
     @set_list_song = SetListSong.find(params.fetch("id_to_remove"))
 

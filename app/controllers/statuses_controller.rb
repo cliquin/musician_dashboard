@@ -53,6 +53,14 @@ class StatusesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @status = Status.find(params.fetch("id_to_remove"))
+
+    @status.destroy
+
+    redirect_to("/users/#{@status.user_id}", notice: "Status deleted successfully.")
+  end
+
   def destroy_row
     @status = Status.find(params.fetch("id_to_remove"))
 
