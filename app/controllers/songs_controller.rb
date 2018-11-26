@@ -60,7 +60,7 @@ class SongsController < ApplicationController
     @song = Song.find(params.fetch("id_to_modify"))
 
     @song.title = params.fetch("title")
-    @song.user_id = params.fetch("user_id")
+    
     @song.status_id = params.fetch("status_id")
 
     if @song.valid?
