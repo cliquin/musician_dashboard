@@ -9,6 +9,10 @@ class SetList < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :songs,
+             :through => :set_list_songs,
+             :source => :song
+
   # Validations
 
 end

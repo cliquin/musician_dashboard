@@ -12,6 +12,8 @@ RSpec.describe SetList, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:songs) }
+
     end
 
     describe "Validations" do

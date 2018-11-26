@@ -12,6 +12,10 @@ class Song < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :set_lists,
+             :through => :set_list_songs,
+             :source => :set_list
+
   # Validations
 
 end
