@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @song.present? %>
+  <% if @song.errors.any? %>
+    <% @song.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new song
+</h1>
+
+
+<hr>
+
+<!-- Form song start -->
+<form action="/create_song" method="post">
+<!-- Form song end -->
+
+  <!-- Label and input for title start -->
+  <div class="form-group">
+    <label for="title">
+      Title
+    </label>
+
+    <!-- Input for title start -->
+    <input type="text" id="title" name="title" class="form-control" value="<%= @song.title %>">
+    <!-- Input for title end -->
+  </div>
+  <!-- Label and input for title end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @song.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for status_id start -->
+  <div class="form-group">
+    <label for="status_id">
+      Status
+    </label>
+
+    <!-- Input for status_id start -->
+    <input type="text" id="status_id" name="status_id" class="form-control" value="<%= @song.status_id %>">
+    <!-- Input for status_id end -->
+  </div>
+  <!-- Label and input for status_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create song
+  </button>
+</form>
+
+<hr>
+
+<a href="/songs">
+  Go back
+</a>
